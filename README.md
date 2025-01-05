@@ -14,4 +14,4 @@ ven. K dispozici bude mít pár zbraní a špičkovou genetickou modifikaci.
 ## Modely
 ### Medipen
 Jeden ze dvou hlavních způsobů léčení  
-![medipen model](https://github.com/Astat7/fps-game/blob/main/examples/medipen.png)
+![medipen model](https://github.com/Astat7/fps-game/blob/main/examples/medipen_model.png)

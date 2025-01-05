@@ -31,3 +31,4 @@ Světlomet pro osvětlení velké otevřené místnosi.
 Kamera do místností.  
 ![old CCTV camera](https://github.com/Astat7/fps-game/blob/main/examples/camera_model.png)
 # Audio
+[Credits and licenses](https://github.com/Astat7/fps-game/blob/main/assets/audio/credits_and_licenses.md)

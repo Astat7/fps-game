@@ -15,3 +15,18 @@ ven. K dispozici bude mít pár zbraní a špičkovou genetickou modifikaci.
 ### Medipen
 Jeden ze dvou hlavních způsobů léčení  
 ![medipen model](https://github.com/Astat7/fps-game/blob/main/examples/medipen_model.png)
+### Door
+Dveře, otevírají se a zavírají.  
+![heavy sliding door](https://github.com/Astat7/fps-game/blob/main/examples/door_model.png)
+### Door button
+Tlačítko pro otevíraní a zavíraní dveří s malým displayem.  
+![small panel with a display and a button](https://github.com/Astat7/fps-game/blob/main/examples/door_button_model.png)
+### Long light
+Dlouhé fluorescenční světlo pro osvětlení místnosí.  
+![long fluorescent light](https://github.com/Astat7/fps-game/blob/main/examples/long_light_model.png)
+### Flood light
+Světlomet pro osvětlení velké otevřené místnosi.  
+![flood light](https://github.com/Astat7/fps-game/blob/main/examples/flood_light_model.png)
+### Camera
+Kamera do místností.  
+![old CCTV camera](https://github.com/Astat7/fps-game/blob/main/examples/camera_model.png)

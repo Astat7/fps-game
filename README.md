@@ -10,3 +10,4 @@ Ve hře se hráč bude snažit projít budovou. Při tom bude muset překonat r�
 bandity a bezpečnostní systém budovy.
 Hráč se totiž probudil z kryo spánku v opuštěné kryo laboratoři a musí se dostat z ní 
 ven. K dispozici bude mít pár zbraní a špičkovou genetickou modifikaci.
+# Grafické assety

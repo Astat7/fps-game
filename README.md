@@ -1,3 +1,8 @@
+# Ovládání
+- Left Click - střílení
+- WASD - pohyb
+- R - přebijení
+- E - interakce
 # Úvod
 Toto je první část dokumentace k projektu do předmětu počítačové hry. Bude se 
 jednat o 3D střílečku z pohledu první osoby. Ve hře půjde o to, dostat se ven ze staré 

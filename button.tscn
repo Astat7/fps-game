@@ -1,0 +1,50 @@
+[gd_scene load_steps=9 format=3 uid="uid://cp4rqu30yw3ft"]
+
+[ext_resource type="PackedScene" uid="uid://br731jo6oc3u4" path="res://assets/imported_models/button.glb" id="1_og3ic"]
+[ext_resource type="Script" path="res://code/button.gd" id="2_3tudu"]
+[ext_resource type="Script" path="res://code/button_collider.gd" id="3_fcimm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vun3"]
+albedo_color = Color(0.517184, 0.517184, 0.517184, 1)
+metallic = 0.8
+roughness = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tikxk"]
+albedo_color = Color(0.522845, 0.818907, 0.520681, 1)
+roughness = 0.52
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_w66kq"]
+size = Vector2(0.045, 0.07)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mi4ry"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i3lty"]
+size = Vector3(0.059, 0.153, 0.104)
+
+[node name="button" instance=ExtResource("1_og3ic")]
+script = ExtResource("2_3tudu")
+
+[node name="Cube" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2vun3")
+
+[node name="Cylinder" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tikxk")
+
+[node name="Cube_001" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2vun3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0225, 0.036, 0)
+mesh = SubResource("PlaneMesh_w66kq")
+surface_material_override/0 = SubResource("StandardMaterial3D_mi4ry")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+script = ExtResource("3_fcimm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006, 0.000500001, 0.000999998)
+shape = SubResource("BoxShape3D_i3lty")
+
+[connection signal="interacted_signal" from="StaticBody3D" to="." method="_on_interacted_signal"]

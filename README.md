@@ -1,6 +1,7 @@
 # Ovládání
 - Left Click - střílení
 - WASD - pohyb
+- Space - skok
 - R - přebijení
 - E - interakce
 # Úvod

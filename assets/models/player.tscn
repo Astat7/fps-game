@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7l3nn7da0exv"]
+
+[ext_resource type="Script" path="res://code/player_control.gd" id="1_llqi6"]
+[ext_resource type="Texture2D" uid="uid://cyrxbjkixapja" path="res://sprites/cursor_sprites/cursor_cross_test.png" id="2_ercwc"]
+[ext_resource type="AudioStream" uid="uid://kf3ws5cy3xu2" path="res://assets/audio/gunshot_pistol.ogg" id="2_jnr37"]
+[ext_resource type="Script" path="res://code/crosshair.gd" id="3_8tr5y"]
+[ext_resource type="Script" path="res://code/ammo_counter.gd" id="5_gsqre"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ilies"]
+height = 1.82
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wukjq"]
+height = 1.82
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_llqi6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_ilies")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_wukjq")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody3D/Camera3D"]
+stream = ExtResource("2_jnr37")
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+texture = ExtResource("2_ercwc")
+script = ExtResource("3_8tr5y")
+
+[node name="AmmoSuperLabel" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="AmmoLabel" type="Label" parent="AmmoSuperLabel"]
+unique_name_in_owner = true
+offset_right = 43.0
+offset_bottom = 23.0
+text = "12/12
+"
+horizontal_alignment = 1
+script = ExtResource("5_gsqre")

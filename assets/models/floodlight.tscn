@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bopui17s510kn"]
+
+[ext_resource type="PackedScene" uid="uid://6momgpwspun2" path="res://assets/inherited_models/floodlight.tscn" id="1_1xe4f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmjw2"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i325e"]
+material = SubResource("StandardMaterial3D_lmjw2")
+size = Vector2(0.198, 0.198)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="LightMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.0505542, 0, 0)
+mesh = SubResource("PlaneMesh_i325e")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="LightMesh"]
+transform = Transform3D(1, 4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, -4.37114e-08, 1, -4.37114e-08, 0, 0, 0)
+light_energy = 16.0
+light_indirect_energy = 8.0
+shadow_enabled = true
+spot_range = 55.538
+spot_angle = 54.32
+
+[node name="floodlight" parent="." instance=ExtResource("1_1xe4f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0253028, 0, 0)

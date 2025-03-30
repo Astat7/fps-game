@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cp0agollm4k15"]
+
+[ext_resource type="Texture2D" uid="uid://dwsxyuis1gmmx" path="res://textures/images/concrete.webp" id="1_v24vg"]
+
+[resource]
+albedo_color = Color(0.226708, 0.226707, 0.226707, 1)
+albedo_texture = ExtResource("1_v24vg")
+normal_scale = 0.45
+uv1_scale = Vector3(8, 8, 8)

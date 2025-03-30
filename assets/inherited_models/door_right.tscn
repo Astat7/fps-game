@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://hthfvgkmntag"]
+
+[ext_resource type="PackedScene" uid="uid://b0a2coudw1h6t" path="res://assets/imported_models/door_right.glb" id="1_wmavh"]
+[ext_resource type="Material" uid="uid://bqwdusn3spijq" path="res://materials/metal.tres" id="2_fe2uj"]
+
+[node name="door_right" instance=ExtResource("1_wmavh")]
+
+[node name="Cube_006" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_fe2uj")
+
+[node name="Cube_001" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_fe2uj")
+
+[node name="Cube_005" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_fe2uj")

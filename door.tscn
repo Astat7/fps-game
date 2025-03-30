@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkkl466qaj530"]
+
+[ext_resource type="PackedScene" uid="uid://dnuwkjiap1rjb" path="res://assets/inherited_models/door_left.tscn" id="1_7coih"]
+[ext_resource type="Script" path="res://code/door.gd" id="1_7ioeo"]
+[ext_resource type="PackedScene" uid="uid://hthfvgkmntag" path="res://assets/inherited_models/door_right.tscn" id="2_k0sig"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_co0nr"]
+size = Vector3(0.225, 2.025, 1.05)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_7ioeo")
+
+[node name="door_right" type="StaticBody3D" parent="."]
+
+[node name="door_right" parent="door_right" instance=ExtResource("2_k0sig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125, 0.0249999, -0.4625)
+shape = SubResource("BoxShape3D_co0nr")
+
+[node name="door_left" type="StaticBody3D" parent="."]
+
+[node name="door_left" parent="door_left" instance=ExtResource("1_7coih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.55)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="door_left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0125, 0.0249999, 0.5125)
+shape = SubResource("BoxShape3D_co0nr")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

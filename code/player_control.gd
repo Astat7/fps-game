@@ -5,6 +5,8 @@ var interact_range = 5
 
 var max_ammo = 12
 var ammo = 12
+var health = 100
+var max_health = 100
 
 var move_speed = 5.0
 var jump_speed = 4.5
@@ -13,6 +15,7 @@ var bullet_speed = 0.005 # seconds per meter
 var reload_time = 1
 
 var reloading = false
+var dead = false
 
 # rotate camera with mouse
 func rotate_camera(event) -> void:
@@ -92,15 +95,20 @@ func reload(event, override=false):
 		reloading = false
 		)
 
+func update_health(new_value, new_max_value=max_health):
+	max_health = new_max_value
+	health = clamp(new_value, 0, max_health)
+	%HealthBar.update(health, max_health)
+
 func update_ammo(new_value, new_max_value=max_ammo):
 	max_ammo = new_max_value
-	ammo = new_value
+	ammo = clamp(new_value, 0, max_ammo)
 	%AmmoLabel.update(ammo, max_ammo)
 
 func process_jump() -> void:
 	if !(Input.is_action_just_pressed("jump")):
 		return
-	if !is_on_floor:
+	if !is_on_floor():
 		return
 	velocity.y = jump_speed
 
@@ -110,6 +118,12 @@ func process_gravity(delta) -> void:
 		return
 	velocity += get_gravity() * delta
 	
+func passive_health_regen(delta):
+	if dead == true:
+		return
+	if health >= max_health:
+		return
+	update_health(health+2*delta)
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -130,6 +144,9 @@ func _physics_process(delta: float) -> void:
 
 	# jump
 	process_jump()
+
+	# passive health regeneration
+	passive_health_regen(delta)
 
 	# movement
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")

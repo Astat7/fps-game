@@ -49,7 +49,7 @@ Setter for *health* and *max_health* variables, primarily used to heal or damage
 ### update_ammo(new_value, new_max_value=max_ammo)
 - returns void
 
-Setter for *ammo* and *max_ammo* variables, primarily used to reload the gun and decrement ammo after each shot
+Setter for *ammo* and *max_ammo* variables, primarily used to reload the gun and decrement *ammo* after each shot
 #### arguments
 - new_value – value that will be assigned to *ammo* variable
 - new_max_value – value, that will be assigned to *max_ammo* variable, defaults to current *max_ammo*

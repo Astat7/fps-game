@@ -53,3 +53,41 @@ Setter for *ammo* and *max_ammo* variables, primarily used to reload the gun and
 #### arguments
 - new_value – value that will be assigned to *ammo* variable
 - new_max_value – value, that will be assigned to *max_ammo* variable, defaults to current *max_ammo*
+### process_jump()
+- returns void
+
+Makes the player character jump when jump key is pressed
+### process_gravity(delta)
+- returns void
+
+Applies gravity to the player when midair
+#### arguments
+- delta – seconds per physics tick
+### passive_health_regen(delta)
+- returns void
+
+Passively heals the player, currently hardcoded to 2 health points per second
+#### arguments
+- delta – seconds per physics tick
+### _ready()
+- returns void
+
+locks the mouse to player character control mode
+### _input(event)
+- returns void
+
+Handles player input
+#### arguments
+- event – holds input from the player
+### _physics_process(delta)
+- returns void
+
+Handles movement and passive health regeneration
+#### arguments
+- delta – seconds per physics tick
+### _process()
+- returns void
+
+Toggles *free_mouse* variable based on the free mouse key input.
+
+TO-DO: Move this behaivor to *_input()*

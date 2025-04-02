@@ -1,4 +1,4 @@
-This containd documentation for multiple scripts
+This contains documentation for multiple scripts
 # [crosshair.gd](https://github.com/Astat7/fps-game/blob/main/code/crosshair.gd)
 ## Methods
 ### _ready()

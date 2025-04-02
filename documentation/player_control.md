@@ -14,9 +14,28 @@
 - reloading – used to tract if the player is currently reloading the gun
 - dead – used to track if the player has died
 ## Methods
-### rotate_camera
+### rotate_camera(event)
 - returns void
 
 Allows the player to rotate the camera vertically and horizontally by moving the mouse
 #### arguments
 - event – holds input from the player
+### shoot(event)
+- returns void
+
+Handles shooting with gun using raycasting and plays the bullet animation
+#### arguments
+- event – holds input from the player
+### interact(event)
+- returns void
+
+Using raycast, it calls the *interacted* method on any collider it hits
+#### arguments
+- event – holds input from the player
+### reload(event, override=false)
+- returns void
+
+Sets ammo value to max ammo, reloading the gun, and plays the reloading animation
+#### arguments
+- event – holds input from the player
+- override – bypasses the check for reload key, defaults to *false*

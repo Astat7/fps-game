@@ -4,6 +4,7 @@
 - Space - skok
 - R - přebijení
 - E - interakce
+## (Dokumentace)[https://github.com/Astat7/fps-game/tree/main/documentation]
 # Úvod
 Toto je první část dokumentace k projektu do předmětu počítačové hry. Bude se 
 jednat o 3D střílečku z pohledu první osoby. Ve hře půjde o to, dostat se ven ze staré 

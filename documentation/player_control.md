@@ -16,6 +16,7 @@
 ## Methods
 ### rotate_camera
 - returns void
+
 Allows the player to rotate the camera vertically and horizontally by moving the mouse
 #### arguments
 - event – holds input from the player

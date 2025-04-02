@@ -39,3 +39,17 @@ Sets ammo value to max ammo, reloading the gun, and plays the reloading animatio
 #### arguments
 - event – holds input from the player
 - override – bypasses the check for reload key, defaults to *false*
+### update_health(new_value, new_max_value=max_health)
+- returns void
+
+Setter for *health* and *max_health* variables, primarily used to heal or damage the player
+#### arguments
+- new_value – value that will be assigned to *health* variable
+- new_max_value – value, that will be assigned to *max_health* variable, defaults to current *max_health*
+- ### update_ammo(new_value, new_max_value=max_ammo)
+- returns void
+
+Setter for *ammo* and *max_ammo* variables, primarily used to reload the gun and decrement ammo after each shot
+#### arguments
+- new_value – value that will be assigned to *ammo* variable
+- new_max_value – value, that will be assigned to *max_ammo* variable, defaults to current *max_ammo*
